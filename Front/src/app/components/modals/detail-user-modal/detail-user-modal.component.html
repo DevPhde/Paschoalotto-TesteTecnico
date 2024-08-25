@@ -1,0 +1,47 @@
+<h2 mat-dialog-title>Detalhes do Usuário</h2>
+<mat-dialog-content>
+  <p><strong>ID:</strong> {{ data.id }}</p>
+  <p><strong>Id Name:</strong> {{ data.idName || 'N/A' }}</p>
+  <p><strong>Id Value:</strong> {{ data.idValue || 'N/A' }}</p>
+  <p><strong>Nome Completo:</strong> {{ data.fullName }}</p>
+  <p><strong>Email:</strong> {{ data.email }}</p>
+  <p><strong>Data de Nascimento:</strong> {{ data.dateOfBirthday | date }}</p>
+  <p><strong>Idade:</strong> {{ data.age }}</p>
+  <p><strong>Data de Registro:</strong> {{ data.registeredDate | date }}</p>
+  <p><strong>Telefone:</strong> {{ data.phone }}</p>
+  <p><strong>Celular:</strong> {{ data.cell }}</p>
+  <p><strong>Nacionalidade:</strong> {{ data.nat }}</p>
+
+  <p><strong>Informações de login:</strong></p>
+  <p><strong> Username:</strong> {{ data.login.username }}</p>
+  <p><strong> uuid:</strong> {{ data.login.uuid }}</p>
+  <p><strong> password:</strong> {{ data.login.password }}</p>
+  <p><strong> salt:</strong> {{ data.login.salt }}</p>
+  <p><strong> md5:</strong> {{ data.login.md5 }}</p>
+  <p><strong> sha1:</strong> {{ data.login.sha1 }}</p>
+  <p><strong> sha256:</strong> {{ data.login.sha256 }}</p>
+
+  <p><strong>Localização:</strong></p>
+  <ul>
+    <li><strong>Rua:</strong> {{ data.location.streetName }}, {{ data.location.streetNumber }}</li>
+    <li><strong>Cidade:</strong> {{ data.location.city }}</li>
+    <li><strong>Estado:</strong> {{ data.location.state }}</li>
+    <li><strong>País:</strong> {{ data.location.country }}</li>
+    <li><strong>Código Postal:</strong> {{ data.location.postCode }}</li>
+    <li><strong>Latitude:</strong> {{ data.location.latitude }}</li>
+    <li><strong>Longitude:</strong> {{ data.location.longitude }}</li>
+    <li><strong>Fuso Horário:</strong> {{ data.location.timezoneDescription }} ({{ data.location.timezoneOffset }})</li>
+  </ul>
+  <p><strong>Foto:</strong></p>
+  <img [src]="data.picture.thumbnail" alt="Thumbnail">
+  <hr>
+  <p><strong>Login thumbnail:</strong> {{ data.picture.thumbnail }}</p>
+  <p><strong>Login medium:</strong> {{ data.picture.medium }}</p>
+  <p><strong>Login large:</strong> {{ data.picture.large }}</p>
+
+</mat-dialog-content>
+
+<hr>
+<mat-dialog-actions class="justify-content-center d-flex py-3">
+  <button class="btn btn-primary" (click)="onClose()">Fechar</button>
+</mat-dialog-actions>
